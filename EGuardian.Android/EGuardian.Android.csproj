@@ -1,0 +1,682 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{9AA2D3C6-3393-45F1-8E7C-5A9901728795}</TemplateGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>EGuardian.Droid</RootNamespace>
+    <AssemblyName>EGuardian.Android</AssemblyName>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <EnableProguard>true</EnableProguard>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <EnableProguard>false</EnableProguard>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CarouselView.FormsPlugin">
+      <Version>5.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>1.1.4.168</Version>
+    </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.5.231</Version>
+    </PackageReference>
+    <PackageReference Include="Toasts.Forms.Plugin">
+      <Version>2.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugins.Settings">
+      <Version>3.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+    <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="27.0.2.1" />
+    <PackageReference Include="Xam.Plugins.Forms.RoundedBoxView">
+      <Version>1.0.0.7</Version>
+    </PackageReference>
+    <PackageReference Include="SuaveControls.FloatingActionButton">
+      <Version>2018.1.5</Version>
+    </PackageReference>
+    <PackageReference Include="Refractored.XamForms.PullToRefresh">
+      <Version>2.2.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
+      <Version>3.0.0.5</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugins.Messaging">
+      <Version>5.2.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Renderers\ExtendedButtonRenderer.cs" />
+    <Compile Include="Renderers\ExtendedEntryRenderer.cs" />
+    <Compile Include="Renderers\ExtendedLabelRenderer.cs" />
+    <Compile Include="Renderers\ExtendedPdfViewRenderer.cs" />
+    <Compile Include="Renderers\ExtendedPickerRenderer.cs" />
+    <Compile Include="Renderers\ExtendedViewCellRenderer.cs" />
+    <Compile Include="Renderers\FrameViewRenderer.cs" />
+    <Compile Include="Renderers\IconViewRenderer.cs" />
+    <Compile Include="Renderers\XamarinLabelRenderer.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashActivity.cs" />
+    <Compile Include="Services\SQLite_Android.cs" />
+    <Compile Include="Services\PeriodicBackgroundService.cs" />
+    <Compile Include="Services\ManejadorServicio.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\OpenSans-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\OpenSans-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\OpenSans-ExtraBold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\OpenSans-Light.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <AndroidAsset Include="Assets\Roboto-Black.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\Roboto-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\Roboto-Light.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\Roboto-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Tabbar.axml" />
+    <AndroidResource Include="Resources\layout\Toolbar.axml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\icon_round.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable\bk_profile.png" />
+    <AndroidResource Include="Resources\drawable\check.png" />
+    <AndroidResource Include="Resources\drawable\check2x.png" />
+    <AndroidResource Include="Resources\drawable\fechaActual.png" />
+    <AndroidResource Include="Resources\drawable\fechaSeleccionada.png" />
+    <AndroidResource Include="Resources\drawable\headerAjustes.jpg" />
+    <AndroidResource Include="Resources\drawable\headerCaja.jpg" />
+    <AndroidResource Include="Resources\drawable\headerCitas.jpg" />
+    <AndroidResource Include="Resources\drawable\headerExpediente.png" />
+    <AndroidResource Include="Resources\drawable\headerInfoAyuda.jpg" />
+    <AndroidResource Include="Resources\drawable\headerLaboratorios.jpg" />
+    <AndroidResource Include="Resources\drawable\headerPacientes.jpg" />
+    <AndroidResource Include="Resources\drawable\headerReceta.jpg" />
+    <AndroidResource Include="Resources\drawable\headerRecetas.jpg" />
+    <AndroidResource Include="Resources\drawable\headerRegistro.png" />
+    <AndroidResource Include="Resources\drawable\iAcceso.png" />
+    <AndroidResource Include="Resources\drawable\iAdHonorem.png" />
+    <AndroidResource Include="Resources\drawable\iAgenda.png" />
+    <AndroidResource Include="Resources\drawable\iAltura.png" />
+    <AndroidResource Include="Resources\drawable\iAntecedentes.png" />
+    <AndroidResource Include="Resources\drawable\iAnterior.png" />
+    <AndroidResource Include="Resources\drawable\iAnteriorC.png" />
+    <AndroidResource Include="Resources\drawable\iArchivo.png" />
+    <AndroidResource Include="Resources\drawable\iAvatar.png" />
+    <AndroidResource Include="Resources\drawable\iAyuda.png" />
+    <AndroidResource Include="Resources\drawable\iBusquedaIndicador.png" />
+    <AndroidResource Include="Resources\drawable\iBusquedaPacientes.png" />
+    <AndroidResource Include="Resources\drawable\iCaja.png" />
+    <AndroidResource Include="Resources\drawable\iCalendar.png" />
+    <AndroidResource Include="Resources\drawable\iCalendars.png" />
+    <AndroidResource Include="Resources\drawable\iCancelarA.png" />
+    <AndroidResource Include="Resources\drawable\iCancelarB.png" />
+    <AndroidResource Include="Resources\drawable\iCancelarBusqueda.png" />
+    <AndroidResource Include="Resources\drawable\iCancelarEdicion.png" />
+    <AndroidResource Include="Resources\drawable\iCheque.png" />
+    <AndroidResource Include="Resources\drawable\iCirculo.png" />
+    <AndroidResource Include="Resources\drawable\iClinica.png" />
+    <AndroidResource Include="Resources\drawable\iComentario.png" />
+    <AndroidResource Include="Resources\drawable\iConfiguracion.png" />
+    <AndroidResource Include="Resources\drawable\iConsultas.png" />
+    <AndroidResource Include="Resources\drawable\iContinuar.png" />
+    <AndroidResource Include="Resources\drawable\iCorreo.png" />
+    <AndroidResource Include="Resources\drawable\iDesarrollo.jpg" />
+    <AndroidResource Include="Resources\drawable\idropdown.png" />
+    <AndroidResource Include="Resources\drawable\iDropdownA.png" />
+    <AndroidResource Include="Resources\drawable\iDropdownB.png" />
+    <AndroidResource Include="Resources\drawable\iEdad.png" />
+    <AndroidResource Include="Resources\drawable\iEdicion.png" />
+    <AndroidResource Include="Resources\drawable\iEfectivo.png" />
+    <AndroidResource Include="Resources\drawable\iEnviar.png" />
+    <AndroidResource Include="Resources\drawable\iFABNC.png" />
+    <AndroidResource Include="Resources\drawable\iFABNP.png" />
+    <AndroidResource Include="Resources\drawable\iFABPNC.png" />
+    <AndroidResource Include="Resources\drawable\iFABPNP.png" />
+    <AndroidResource Include="Resources\drawable\iFenac.png" />
+    <AndroidResource Include="Resources\drawable\iGeneroF.png" />
+    <AndroidResource Include="Resources\drawable\iGeneroM.png" />
+    <AndroidResource Include="Resources\drawable\iHistoriaClinica.png" />
+    <AndroidResource Include="Resources\drawable\iLaboratorios.png" />
+    <AndroidResource Include="Resources\drawable\iLlamar.png" />
+    <AndroidResource Include="Resources\drawable\images.png" />
+    <AndroidResource Include="Resources\drawable\iMedicion.png" />
+    <AndroidResource Include="Resources\drawable\iMediciones.png" />
+    <AndroidResource Include="Resources\drawable\iMedico.png" />
+    <AndroidResource Include="Resources\drawable\iMensaje.png" />
+    <AndroidResource Include="Resources\drawable\iNCinfo.png" />
+    <AndroidResource Include="Resources\drawable\indicator_emtpy.png" />
+    <AndroidResource Include="Resources\drawable\info.png" />
+    <AndroidResource Include="Resources\drawable\iNota.png" />
+    <AndroidResource Include="Resources\drawable\iNPadmin.png" />
+    <AndroidResource Include="Resources\drawable\iNPinfo.png" />
+    <AndroidResource Include="Resources\drawable\iNPlocaliza.png" />
+    <AndroidResource Include="Resources\drawable\iObservaciones.png" />
+    <AndroidResource Include="Resources\drawable\iPacientes.png" />
+    <AndroidResource Include="Resources\drawable\iPacientesBusqueda.png" />
+    <AndroidResource Include="Resources\drawable\iPacientesCancelarBusqueda.png" />
+    <AndroidResource Include="Resources\drawable\iPassView.png" />
+    <AndroidResource Include="Resources\drawable\iPerfil.png" />
+    <AndroidResource Include="Resources\drawable\iPeso.png" />
+    <AndroidResource Include="Resources\drawable\iRecetas.png" />
+    <AndroidResource Include="Resources\drawable\iReferencias.png" />
+    <AndroidResource Include="Resources\drawable\iReloj.png" />
+    <AndroidResource Include="Resources\drawable\iResultados.png" />
+    <AndroidResource Include="Resources\drawable\iSalir.png" />
+    <AndroidResource Include="Resources\drawable\iSangre.png" />
+    <AndroidResource Include="Resources\drawable\iSeguridad.png" />
+    <AndroidResource Include="Resources\drawable\iSiguiente.png" />
+    <AndroidResource Include="Resources\drawable\iSiguienteC.png" />
+    <AndroidResource Include="Resources\drawable\iTarjetaCredito.png" />
+    <AndroidResource Include="Resources\drawable\iTelefono.png" />
+    <AndroidResource Include="Resources\drawable\iTemperatura.png" />
+    <AndroidResource Include="Resources\drawable\iUbicacion.png" />
+    <AndroidResource Include="Resources\drawable\iWeb.png" />
+    <AndroidResource Include="Resources\drawable\Login.png" />
+    <AndroidResource Include="Resources\drawable\LogoMediCloud.png" />
+    <AndroidResource Include="Resources\drawable\plus.png" />
+    <AndroidResource Include="Resources\drawable\splash1.png" />
+    <AndroidResource Include="Resources\drawable\splash2.png" />
+    <AndroidResource Include="Resources\drawable\splash3.png" />
+    <AndroidResource Include="Resources\drawable\splash4.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_drop_down_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_navigate_before_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_navigate_next_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_person_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iCitaDetalle.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iCitaPaciente.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iCitaReloj.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\idropdown.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\idropdownEditor.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iFAB.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iFABa.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iFABP.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iFABPa.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iKeyboard.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iKeyboardA.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\indicator_fill.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\indicator.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iNPinfo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iPerson_h.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iPerson_m.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\mas.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\menu.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\plus.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tutorialItem1.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tutorialItem2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tutorialItem3.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tutorialItem4.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_arrow_drop_down_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_navigate_before_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_navigate_next_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_person_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iCitaDetalle.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iCitaPaciente.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iCitaReloj.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\idropdown.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\idropdownEditor.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iFAB.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iFABa.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iFABP.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iFABPa.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iKeyboard.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iKeyboardA.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\indicator_fill.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\indicator.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iPerson_h.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iPerson_m.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\mas.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\menu.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\plus.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tutorialItem1.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tutorialItem2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tutorialItem3.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tutorialItem4.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow_drop_down_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_navigate_before_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_navigate_next_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_person_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iCitaDetalle.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iCitaPaciente.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iCitaReloj.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\idropdown.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\idropdownEditor.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iFAB.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iFABa.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iFABP.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iFABPa.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iKeyboard.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iKeyboardA.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\indicator_fill.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\indicator.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iPerson_h.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iPerson_m.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\mas.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\menu.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\plus.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tutorialItem1.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tutorialItem2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tutorialItem3.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tutorialItem4.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_arrow_drop_down_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_navigate_before_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_navigate_next_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_person_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iCitaDetalle.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iCitaPaciente.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iCitaReloj.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\idropdown.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\idropdownEditor.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iFAB.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iFABa.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iFABP.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iFABPa.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iKeyboard.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iKeyboardA.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\indicator_fill.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\indicator.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iPerson_h.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iPerson_m.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\mas.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\menu.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\tutorialItem1.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\tutorialItem2.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\tutorialItem3.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\tutorialItem4.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\indicator.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\indicator_fill.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\tutorialItem1.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\tutorialItem2.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\tutorialItem3.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\tutorialItem4.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iCitaDetalle.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iCitaPaciente.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iCitaReloj.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iFAB.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iFABP.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iFABPa.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iFABa.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iKeyboard.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iKeyboardA.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iPerson_h.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iPerson_m.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_arrow_drop_down_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_navigate_before_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_navigate_next_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_person_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\idropdown.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\idropdownEditor.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\indicator.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\indicator_fill.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\mas.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\menu.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\plus.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tutorialItem1.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tutorialItem2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tutorialItem3.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tutorialItem4.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iEmpresa.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iNPadmin.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\login_bk.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iEmpresa.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iNPadmin.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\login_bk.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iEmpresa.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iNPadmin.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\login_bk.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iEmpresa.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iNPadmin.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\login_bk.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iEmpresa.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iNPadmin.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\login_bk.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iEmpresa.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iNPadmin.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\login_bk.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bk_profile.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iAPI.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iAvatar.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iConfiguracion.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iEventos.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iIncidencias.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iPerfil.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iReportes.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iSalir.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\bk_profile.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iAPI.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iAvatar.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iConfiguracion.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iEventos.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iIncidencias.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iPerfil.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iReportes.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iSalir.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\bk_profile.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iAPI.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iAvatar.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iConfiguracion.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iEventos.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iIncidencias.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iPerfil.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iReportes.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iSalir.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bk_profile.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iAPI.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iAvatar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iConfiguracion.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iEventos.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iIncidencias.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iPerfil.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iReportes.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iSalir.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bk_profile.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iAPI.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iAvatar.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iConfiguracion.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iEventos.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iIncidencias.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iPerfil.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iReportes.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iSalir.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\bk_profile.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iAPI.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iAvatar.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iConfiguracion.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iEventos.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iIncidencias.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iPerfil.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iReportes.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iSalir.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iAccess.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iAlertas.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iAlerts.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iAsistentes.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iBusqueda.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iFacebook.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iSendMail.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iSMS.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iTwitter.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iWhatsApp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iYoutube.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iAccess.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iAlertas.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iAlerts.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iAsistentes.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iBusqueda.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iFacebook.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iSendMail.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iSMS.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iTwitter.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iWhatsApp.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iYoutube.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iAccess.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iAlertas.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iAlerts.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iAsistentes.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iBusqueda.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iFacebook.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iSendMail.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iSMS.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iTwitter.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iWhatsApp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iYoutube.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iAccess.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iAlertas.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iAlerts.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iAsistentes.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iBusqueda.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iFacebook.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iSendMail.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iSMS.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iTwitter.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iWhatsApp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iYoutube.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iAccess.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iAlertas.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iAlerts.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iAsistentes.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iBusqueda.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iFacebook.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iSendMail.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iSMS.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iTwitter.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iWhatsApp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iYoutube.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iAccess.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iAlertas.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iAlerts.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iAsistentes.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iBusqueda.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iFacebook.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iSendMail.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iSMS.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iTwitter.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iWhatsApp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iYoutube.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\headerEventos.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\headerEventos.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\headerRegistro.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\headerEventos.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\headerRegistro.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\headerEventos.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\headerEventos.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\headerEventos.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iCancelarEdicion.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iEdicion.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iCancelarEdicion.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iEdicion.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iCancelarEdicion.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iEdicion.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iCancelarEdicion.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iEdicion.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iCancelarEdicion.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iEdicion.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iCancelarEdicion.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iEdicion.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iAdd.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iAdd.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iAdd.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iAdd.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iAdd.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iAdd.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\headerIncidencias.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\headerPerfil.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\headerReportes.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\headerIncidencias.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\headerPerfil.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\headerReportes.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\headerIncidencias.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\headerPerfil.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\headerReportes.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\headerIncidencias.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\headerPerfil.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\headerReportes.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\headerIncidencias.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\headerPerfil.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\headerReportes.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\headerIncidencias.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\headerPerfil.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\headerReportes.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\headerConfiguracion.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iNavegador.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\headerConfiguracion.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iNavegador.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\headerConfiguracion.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iNavegador.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\headerConfiguracion.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iNavegador.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\headerConfiguracion.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iNavegador.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\headerConfiguracion.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iNavegador.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iAvion.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iSonido.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iVibracion.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iAvion.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iSonido.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\iVibracion.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iAvion.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iSonido.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\iVibracion.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iAvion.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iSonido.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iVibracion.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iAvion.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iSonido.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iVibracion.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iAvion.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iSonido.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\iVibracion.png" />
+    <AndroidResource Include="Resources\raw\ding_persevy.wav" />
+    <AndroidResource Include="Resources\drawable-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable-hdpi\" />
+    <Folder Include="Resources\drawable-xhdpi\" />
+    <Folder Include="Resources\drawable-xxhdpi\" />
+    <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Services\" />
+    <Folder Include="Resources\raw\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EGuardian\EGuardian.csproj">
+      <Project>{AF1F9F1A-64F7-470C-8646-AE899146C94F}</Project>
+      <Name>EGuardian</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\tutorial_bk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\indicator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\indicator_fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\tutorialItem1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\tutorialItem2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\tutorialItem3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\tutorialItem4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\login_bk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\splash_screen.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\splash.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+</Project>
